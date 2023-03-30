@@ -1,4 +1,3 @@
 package com.alexmumo.common
 
-class MyClass {
-}
+sealed class Resource
