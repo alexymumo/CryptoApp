@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace 'com.alexmumo.cache'
+    namespace 'com.extrainch.local'
     compileSdk 33
 
     defaultConfig {
@@ -33,20 +33,13 @@ android {
 }
 
 dependencies {
+
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
-
-    //testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-    androidTestImplementation "com.google.truth:truth:1.1.3"
-    androidTestImplementation "android.arch.core:core-testing:1.1.1"
-    testImplementation "androidx.room:room-testing:$room_version"
-    testImplementation "org.robolectric:robolectric:4.9"
-    implementation 'androidx.test:core-ktx:1.5.0'
-    testImplementation "com.google.truth:truth:$truth_version"
 
     // Room
     api "androidx.room:room-runtime:$room_version"

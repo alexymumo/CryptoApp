@@ -1,4 +1,4 @@
-package com.alexmumo.cache
+package com.extrainch.local
 
 import org.junit.Test
 
