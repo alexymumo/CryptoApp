@@ -1,5 +1,4 @@
 package com.alexmumo.domain.model
-
 data class Coin(
     val id: Int,
     val logo: String,
