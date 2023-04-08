@@ -1,10 +1,10 @@
 package com.alexmumo.repository.repository
 
-import com.alexmumo.cache.dao.CoinDao
 import com.alexmumo.common.Resource
 import com.alexmumo.domain.model.Coin
 import com.alexmumo.domain.repository.CoinRepository
 import com.alexmumo.network.api.CoinMapApi
+import com.alexmumo.local.dao.CoinDao
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import java.io.IOException
@@ -17,7 +17,7 @@ class CoinRepositoryImpl(private val coinDao: CoinDao, private val coinMapApi: C
         //emit(Resource.Success(data = getDataFromDb))
         try {
             val response = coinMapApi.getCoins()
-            coinDao.deleteCoin()
+            Resource.Success(data = null)
             //coinDao.saveCoin(response.map {  })
             Resource.Success(data = response)
         } catch (e: IOException) {

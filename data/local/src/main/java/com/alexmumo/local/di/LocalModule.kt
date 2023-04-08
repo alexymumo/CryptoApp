@@ -1,8 +1,8 @@
-package com.extrainch.local.di
+package com.alexmumo.local.di
 
 import android.content.Context
 import androidx.room.Room
-import com.extrainch.local.database.CoinDatabase
+import com.alexmumo.local.database.CoinDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
