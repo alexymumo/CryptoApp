@@ -8,8 +8,8 @@ import com.alexmumo.common.Resource
 import com.alexmumo.cryptoapp.state.CoinState
 import com.alexmumo.domain.usecases.GetCoinUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -22,18 +22,22 @@ class HomeViewModel @Inject constructor(private val getCoinUseCase: GetCoinUseCa
     }
 
     private fun getCoins() {
-        getCoinUseCase().onEach { coin ->
-            when(coin) {
-                is Resource.Success -> {
-                    _coins.value = CoinState(coins = coin.data ?: emptyList())
-                }
-                is Resource.Error -> {
+        viewModelScope.launch {
+            getCoinUseCase().collectLatest { coins ->
+                when(coins) {
+                    is Resource.Success -> {
+                        _coins.value = _coins.value.copy(
+                            coins = coins.data ?: emptyList()
+                        )
+                    }
+                    is Resource.Error -> {
 
-                }
-                is Resource.Loading -> {
+                    }
+                    is Resource.Loading -> {
 
+                    }
                 }
             }
-        }.launchIn(viewModelScope)
+        }
     }
 }
