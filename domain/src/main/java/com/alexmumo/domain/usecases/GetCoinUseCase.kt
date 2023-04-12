@@ -4,6 +4,9 @@ import com.alexmumo.common.Resource
 import com.alexmumo.domain.model.Coin
 import com.alexmumo.domain.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.map
+import java.io.IOException
 import javax.inject.Inject
 
 class GetCoinUseCase @Inject constructor(private val coinRepository: CoinRepository) {

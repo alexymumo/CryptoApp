@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.alexmumo.cryptoapp.ui.screens.HomeScreen
+import com.alexmumo.cryptoapp.ui.screens.MainScreen
 import com.alexmumo.cryptoapp.ui.theme.CryptoAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,13 +21,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             CryptoAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    HomeScreen()
-                }
+                MainScreen()
             }
         }
     }

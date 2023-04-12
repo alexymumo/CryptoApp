@@ -6,9 +6,11 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "coin_table")
 data class CoinEntity(
     @PrimaryKey
-    val id: Int,
-    val logo: String,
+    val id: String,
+    val is_active: Boolean,
+    val is_new: Boolean,
     val name: String,
-    val priority: Int,
-    val symbol: String
+    val rank: Int,
+    val symbol: String,
+    val type: String
 )

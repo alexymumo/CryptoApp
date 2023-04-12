@@ -3,12 +3,14 @@ package com.alexmumo.repository.mappers
 import com.alexmumo.local.entity.CoinEntity
 import com.alexmumo.network.dto.CoinDto
 
-internal fun CoinDto.toDomain(): CoinEntity {
+internal fun CoinDto.toEntity(): CoinEntity {
     return CoinEntity(
         this.id,
-        this.logo,
+        this.is_active,
+        this.is_new,
         this.name,
-        this.priority,
-        this.symbol
+        this.rank,
+        this.symbol,
+        this.type
     )
 }

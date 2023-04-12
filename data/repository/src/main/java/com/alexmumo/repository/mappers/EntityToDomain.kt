@@ -6,9 +6,11 @@ import com.alexmumo.local.entity.CoinEntity
 internal fun CoinEntity.toDomain(): Coin {
     return Coin(
         this.id,
-        this.logo,
+        this.is_active,
+        this.is_new,
         this.name,
-        this.priority,
-        this.symbol
+        this.rank,
+        this.symbol,
+        this.type
     )
 }

@@ -20,6 +20,6 @@ object LocalModule {
             context.applicationContext,
             CoinDatabase::class.java,
             "coin.db"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 }
